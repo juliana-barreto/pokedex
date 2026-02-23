@@ -30,10 +30,13 @@ export function Home() {
     <div className="min-h-screen bg-gray-50 p-8">
       <header className="mb-10 text-center">
         <h1 className="text-5xl font-black text-red-600">Pokédex</h1>
+        <p className="text-lg text-gray-700 mt-2">
+          Explore o mundo dos Pokémon! Clique em um cartão para ver detalhes sobre cada criatura.
+        </p>
       </header>
 
       {isLoading ? (
-        <div className="text-center text-xl font-semibold">Loading Pokémon...</div>
+        <div className="text-center text-xl font-semibold">Carregando Pokémon...</div>
       ) : (
         <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {}
