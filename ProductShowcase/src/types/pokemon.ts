@@ -1,3 +1,4 @@
+// Lida com o endpoint inicial pokeapi.co/api/v2/{endpoint}/
 export interface PokemonListResponse {
   count: number;
   next: string | null;
@@ -10,6 +11,7 @@ export interface PokemonListItem {
   url: string;
 }
 
+// Lida com o endpoint pokeapi.co/api/v2/pokemon/{id or name}/
 export interface PokemonDetails {
   id: number;
   name: string;
