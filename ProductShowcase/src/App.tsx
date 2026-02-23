@@ -1,15 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home } from './pages/Home';
-
 function App() {
   return (
-    <BrowserRouter>
-      {}
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <h1 className="text-4xl font-bold text-red-500">
+        Pokédex
+      </h1>
+    </div>
+  )
 }
 
-export default App;
+export default App
