@@ -1,66 +1,77 @@
-* IMPORTANTE: Não inicie este desafio sem autorização. O desafio só poderá ser iniciado no dia e horário agendado. Entre em contato via email ou whatsapp:
-  - administrativo@infinixassessoria.com.br
-  - (21) 99515-2411
+# Pokédex - Desafio Técnico Front-end
 
-# DESAFIO FRONT-END
+> Aplicação Single Page (SPA) profissional para consumo e exibição de dados da PokéAPI, focada em performance, tipagem rigorosa e experiência do usuário (UX).
 
-## Sobre
-**Stack**: React + TypeScript + Axios + TailwindCSS
-**API Externa**: PokeAPI.co (https://pokeapi.co/)
-**Escopo**: Uma Pokedéx online.
+<div align="center">
+  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
+  <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
+</div>
 
-## Requisitos Essenciais (Timebox 4h)
+---
 
-1. Estrutura de Pastas: A estrutura deve ser organizada. Não é sobre **qual** estrutura, mas se ela é consistente e se você consegue justificá-la (posteriormente via README-CANDIDATO).
-2. Consumo de API: Crie um serviço de API que usa *axios* para interagir com os endpoints.
-3. Tipagem (TypeScript): Crie interfaces para tipar os dados recebidos da API. O uso de *any* deve ser evitado.
-4. Tela 1: Home (/) — A lista de Pokémon
-    - Buscar a lista inicial de Pokémons com limite de 151.
-    - Renderizar um grid responsivo usando **TailwindCSS** para exibir os Pokémons.
-    - Cada card no grid deve ser clicável e exibir o nome do Pokémon e sua imagem.
-    - Ponto de Avaliação Chave: O endpoint de lista *não* retorna a imagem do Pokémon, apenas o nome e uma url de detalhes. Encontre uma solução para esse problema.
-5. Tela 2: Detalhes (/pokemon/:name) — A tela de detalhes
-    - Configure o ```react-router-dom``` para criar uma rota dinâmica.
-    - Clicar em um card na "Home", leva o usuário para "Detalhes".
-    - Nessa tela, uma nova chamada de API deve ser feita parra buscar os dados completos do Pokémon.
-    - Exiba o **nome**, a imagem **oficial**, os **tipos**, a **altura** e o **peso** do Pokémon.
-6. Estados de UI: A tela Home deve exibir um indicador de carregamento enquanto os dados estão sendo buscados.
+## 💻 Sobre o Projeto
 
-#### Bônus (Desejáveis):
-    - Hospedagem: Faça deploy do site estático e cole o link no README-CANDIDATO.md.
-    - Filtro: Adicione um campo de <input> na tela Home que filtra a lista de Pokémon por nome (no lado do cliente)
-    - Contexto: Use a Context API para criar um "Time Pokémon", permitindo ao usuário "favoritar" até 6 Pokémon, e exibir os favoritos em algum lugar do site.
-    - Cache: Adicione uma solução para guardar os dados recebidos da API em cache.
-    - Atualização: Adicione uma solução para que o usuário consiga atualizar a lista de Pokémons, bem como sua lista de favoritos (Essa task requer Cache).
+A Pokédex é uma aplicação front-end desenvolvida em **React e TypeScript**, projetada para consumir a PokéAPI de forma otimizada e escalável.
 
-# Rubrica de Avaliação
+Este projeto vai além da simples renderização de dados. Ele aplica padrões de arquitetura frequentemente encontrados no back-end (como separação em camadas de Serviço e DTOs) no ecossistema front-end. 
 
-| Dimensão Avaliada                        | Peso  | Pontuação (1-5) | Descrição da Avaliação (O que procurar)                                                                                                                                                                                                 |
-|------------------------------------------|-------|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **1. Funcionalidade (Requisitos Essenciais)** | 40%  | [1-5]           | **5 (Excelente):** Cumpriu 100% dos requisitos essenciais. A aplicação roda de primeira, sem bugs óbvios. Trata estados de loading/error.<br>**3 (Satisfatório):** Cumpriu a maioria (80%+) dos requisitos. Funcionalidade principal funciona, mas com bugs menores.<br>**1 (Inaceitável):** Não roda ou a funcionalidade principal está quebrada. O avaliador não consegue testar a solução. |
-| **2. Qualidade de Código e Estrutura**       | 20%  | [1-5]           | **5 (Excelente):** Código limpo, legível e idiomático. Segue princípios (ex: DRY). Estrutura de pastas lógica e escalável. Tipagem (TS) útil e precisa. Separação clara de responsabilidades.<br>**3 (Satisfatório):** Código funciona, mas com repetição ou "code smells". Estrutura de pastas aceitável, mas confusa. Tipagem usada com alguns `any`.<br>**1 (Inaceitável):** "Código espaguete". Variáveis ruins. Lógica de negócio misturada com UI. "Sopa de arquivos" na raiz. |
-| **3. Processo e Comunicação (Git & README)** | 30%  | [1-5]           | **5 (Excelente):** Commits atômicos, frequentes e bem descritos. PR bem escrito. README completo com setup e explicações de design.<br>**3 (Satisfatório):** Usa Git, mas commits grandes (ex: "implementa home e função de agendar tarefas e remove var desnecessária"). README mínimo com instruções básicas.<br>**1 (Inaceitável):** Um único commit ("final"). Nenhum README ou instruções. Demonstra falta de profissionalismo e comunicação. |
-| **4. Bônus e Resolução de Problemas**        | 10%  | [1-5]           | **5 (Excelente):** Implementou requisitos bônus funcionando. README explica como utilizar.<br>**3 (Satisfatório):** Tentou implementar bônus, mas não funcionou. README explica falha e plano.<br>**1 (Inaceitável):** Ignorou bônus ou implementou com falhas e sem explicação no README. |
+O diferencial técnico está na aplicação de **Boas Práticas de Engenharia de Software**, incluindo a mitigação de gargalos de rede (evitando o problema de N+1 requisições para buscar imagens), controle estrito de tipagem em tempo de compilação, roteamento seguro no lado do cliente e design responsivo fluido com TailwindCSS.
 
-## Instruções sobre "FICHA-CANDIDATO" (Timebox 30min):
-Preencha este arquivo com informações claras e concisas, separadas pelas seguintes seções:
+## 🚀 Funcionalidades e Soluções Técnicas
 
-#### Seção 1: Instruções para rodar
-- Quais variáveis de ambiente são necessárias?
-- Como instalar dependências?
-- Como rodar o projeto?
+| Funcionalidade                | Status | Detalhes Técnicos e Regras de Negócio                                                                                                                             |
+|:------------------------------|:------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Catálogo Otimizado** |   ✅   | Extração de IDs numéricos da URL fornecida pela API para renderização estática de imagens em alta resolução, **zerando o custo de N+1 requisições HTTP**.         |
+| **Busca em Tempo Real** |   ✅   | Implementação de filtro *Client-Side* via `useState`. A lista é filtrada em memória utilizando `.filter()` e `.includes()`, garantindo latência zero para o usuário.|
+| **Roteamento Dinâmico** |   ✅   | Uso do `useParams` do React Router para navegação de detalhes (`/pokemon/:name`), com conversão de métricas brutas (decímetros/hectogramas) para metros e quilos. |
+| **Gestão de Ciclo de Vida** |   ✅   | Uso do hook `useEffect` para chamadas assíncronas apenas na montagem (`mount`), controlando estados de `isLoading` para feedback visual com Early Return.       |
+| **Deploy e Infraestrutura** |   ✅   | CI/CD configurado na Vercel com arquivo `vercel.json` implementando regras de `rewrites` (Fallback Strategy) para evitar erros HTTP 404 no roteamento de SPAs.    |
 
-#### Seção 2: Decisões de design
-- Por que você escolheu essa estrutura de pastas?
-- Qual foi a maior dificuldade que você encontrou e como superou?
-- O que você não teve tempo de fazer (dentro do timebox) e como você faria se tivesse mais tempo?
+## 🛠 Arquitetura e Tecnologias
 
-#### Seção 3: Link para Deploy (Bônus)
-- Cole aqui o link do projeto hospedado.
+A aplicação adota uma separação de responsabilidades (Separation of Concerns) rigorosa, garantindo a manutenção e previsibilidade do código.
 
-#### Seção final: Recomendações
-- Escreva aqui dicas, melhorias e recomendações sobre este desafio.
+* **Biblioteca Core:** React 19
+* **Linguagem:** TypeScript
+* **Roteamento:** React Router DOM
+* **Estilização:** Tailwind CSS (Utility-first)
+* **Client HTTP:** Axios
+* **Bundler:** Vite (Rolldown)
+* **Hospedagem:** Edge Network da Vercel
 
-## Considerações finais:
-**NÃO UTILIZE IA PARA O PREENCHIMENTO DO FICHA-CANDIDATO. USE SUAS PALAVRAS, SE DEFENDA, MOSTRE QUE VOCÊ É RESPONSÁVEL PELOS SEUS ERROS E ACERTOS.**
-Este desafio não foi pensado para encontrar quem o finaliza 100% ou quem o termina mais rápido. Estamos buscando um desenvolvedor sério, que saiba como desenvolver soluções mesmo que para apenas 50% do projeto. Não queremos nenhum dev que dependa 100% de IA ou de terceiros, mas sim aquele que sabe priorizar, desenvolver e pesquisar.
+### Destaques de Código
+
+* **DTO Pattern (Camada `types/`):** Em vez de utilizar tipagem `any` para respostas de rede, o contrato da API foi mapeado em interfaces TypeScript (`PokemonListResponse`, `PokemonDetails`), garantindo segurança em tempo de compilação.
+* **Service Layer (Camada `services/`):** Isolamento do Axios e das chamadas externas no arquivo `api.ts`, limpando a camada de visualização (Componentes) de lógicas de fetch.
+* **Componentização:** Extração do `PokemonCard` para um escopo reutilizável, recebendo dados injetados estritamente via `props`.
+
+## Como Executar
+
+### Pré-requisitos
+- Node.js (v18+)
+- NPM ou Yarn
+
+### Passo a Passo
+
+1. Clone o repositório:
+```bash
+git clone [https://github.com/SEU-USUARIO/pokedex.git](https://github.com/SEU-USUARIO/pokedex.git)
+cd pokedex
+```
+2. Instale as dependências:
+
+```Bash
+npm install
+```
+3. Execute o servidor de desenvolvimento:
+
+``` Bash
+npm run dev
+```
+Abra o navegador no endereço indicado no terminal (tipicamente http://localhost:5173/).
+
+## Link para Deploy
+Acesse o projeto online aqui: https://pokedex-juliana-barreto.vercel.app/
