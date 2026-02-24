@@ -26,9 +26,9 @@ O diferencial técnico está na aplicação de **Boas Práticas de Engenharia de
 |:------------------------------|:------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Catálogo Otimizado** |   ✅   | Extração de IDs numéricos da URL fornecida pela API para renderização estática de imagens em alta resolução, **zerando o custo de N+1 requisições HTTP**.         |
 | **Busca em Tempo Real** |   ✅   | Implementação de filtro *Client-Side* via `useState`. A lista é filtrada em memória utilizando `.filter()` e `.includes()`, garantindo latência zero para o usuário.|
-| **Roteamento Dinâmico** |   ✅   | Uso do `useParams` do React Router para navegação de detalhes (`/pokemon/:name`), com conversão de métricas brutas (decímetros/hectogramas) para metros e quilos. |
-| **Gestão de Ciclo de Vida** |   ✅   | Uso do hook `useEffect` para chamadas assíncronas apenas na montagem (`mount`), controlando estados de `isLoading` para feedback visual com Early Return.       |
-| **Deploy e Infraestrutura** |   ✅   | CI/CD configurado na Vercel com arquivo `vercel.json` implementando regras de `rewrites` (Fallback Strategy) para evitar erros HTTP 404 no roteamento de SPAs.    |
+| **Roteamento Dinâmico** |   ✅   | Uso do `useParams` do React Router para navegação de detalhes (`/pokemon/:name`), com conversão de métricas brutas para metros e quilos. |
+| **Gestão de Ciclo de Vida** |   ✅   | Uso do hook `useEffect` para chamadas assíncronas apenas na montagem, controlando estados de `isLoading` para feedback visual com Early Return.       |
+| **Deploy e Infraestrutura** |   ✅   | CI/CD configurado na Vercel com arquivo `vercel.json` implementando regras de `rewrites` para evitar erros HTTP 404 no roteamento de SPAs.    |
 
 ## 🛠 Arquitetura e Tecnologias
 
