@@ -23,6 +23,11 @@ npm run dev
 ```
 O projeto estará disponível no seu navegador, tipicamente no endereço: http://localhost:5173/.
 
+## Bônus Implementados
+- Link para Deploy: A aplicação possui integração contínua (CI/CD) e está hospedada na Edge Network da Vercel.
+Acesse o projeto online aqui: https://pokedex-juliana-barreto.vercel.app/
+- Filtro de Busca em Tempo Real (Client-side): Implementei um campo de busca responsivo na tela inicial utilizando o hook useState como um Controlled Component. A filtragem intercepta a lista já carregada em memória utilizando os métodos .filter() e .includes(). Isso garante uma resposta instantânea (latência zero) na interface, sem sobrecarregar a API com novas requisições.
+
 ## Decisões de design
 
 **Por que você escolheu essa estrutura de pastas e arquitetura?**
@@ -51,13 +56,9 @@ O projeto estará disponível no seu navegador, tipicamente no endereço: http:/
 
 * **Cache de Dados e Atualização:** Para evitar chamadas repetidas à API a cada navegação, eu estudaria como persistir o JSON de resposta na máquina do usuário usando ferramentas nativas como o localStorage.
 
-## Link para Deploy (Bônus)
-
-A aplicação possui integração contínua (CI/CD) e está hospedada na Edge Network da Vercel.
-Acesse o projeto online aqui: https://pokedex-juliana-barreto.vercel.app/
-
 ## Recomendações
 
 - Paginação: Trocar o limite fixo de 151 por uma paginação usando os parâmetros offset e limit da PokeAPI para melhorar a escalabilidade.
 
 - Avaliação do Desafio: O desafio é excelente para avaliar não apenas o conhecimento de React, mas também habilidades arquiteturais e de resolução de problemas, como o caso das imagens ausentes no endpoint principal.
+
