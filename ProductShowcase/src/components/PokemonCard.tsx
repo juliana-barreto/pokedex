@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 interface PokemonCardProps {
   name: string;
   url: string;
@@ -13,16 +15,18 @@ export function PokemonCard({ name, url }: PokemonCardProps) {
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`;
 
   return (
-    <div className="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col items-center">
+    <Link 
+      to={`/pokemon/${name}`}
+      className="bg-white p-4 rounded-xl shadow-md border border-gray-200 flex flex-col items-center transform transition-transform duration-200 hover:scale-105 cursor-pointer hover:shadow-lg"
+    >
       <img 
         src={imageUrl} 
         alt={name} 
         className="w-32 h-32 object-contain mb-4"
       />
-      {}
       <h3 className="text-xl font-bold text-gray-800 capitalize">
         {name}
       </h3>
-    </div>
+    </Link>
   );
 }
