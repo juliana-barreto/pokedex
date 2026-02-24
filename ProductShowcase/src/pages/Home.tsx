@@ -36,18 +36,23 @@ export function Home() {
   // Renderiza a interface do usuário, mostrando um loading enquanto os dados são buscados e depois exibindo os cartões de Pokémon
   return (
     <div className="min-h-screen bg-gray-50 p-8">
-      <header className="mb-10 text-center">
-        <h1 className="text-5xl font-black text-red-600">Pokédex</h1>
-        <p className="text-lg text-gray-700 mt-2">
+<header className="mb-12 text-center">
+        <h1 className="text-5xl font-black text-red-600 drop-shadow-sm">Pokédex</h1>
+        <p className="text-lg text-gray-600 mt-4 mb-8">
           Explore o mundo dos Pokémon! Clique em um cartão para ver detalhes sobre cada criatura.
         </p>
+        
+        <div className="max-w-xl mx-auto relative">
 
-        {/* Campo para filtrar pokémon por nome */}
-        <div className="max-w-md mx-auto mb-8">
+          <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+            <span className="text-gray-400 text-xl">🔍</span>
+          </div>
+
           <input
             type="text"
             placeholder="Buscar Pokémon por nome..."
-            className="w-full p-4 rounded-xl border-2 border-gray-200 shadow-sm focus:border-red-500 focus:outline-none transition-colors text-lg"
+    
+            className="w-full py-4 pl-14 pr-6 rounded-full border-2 border-gray-100 bg-white shadow-lg focus:border-red-500 focus:ring-4 focus:ring-red-100 focus:outline-none transition-all duration-300 text-lg text-gray-700 placeholder-gray-400"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
