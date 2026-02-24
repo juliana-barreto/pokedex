@@ -1,6 +1,6 @@
 # Pokédex - Desafio Técnico Front-end
 
-> Aplicação Single Page (SPA) profissional para consumo e exibição de dados da PokéAPI, focada em performance, tipagem rigorosa e experiência do usuário (UX).
+> Aplicação Single Page profissional para consumo e exibição de dados da PokéAPI, focada em performance, tipagem rigorosa e experiência do usuário.
 
 <div align="center">
   <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
@@ -32,14 +32,14 @@ O diferencial técnico está na aplicação de **Boas Práticas de Engenharia de
 
 ## 🛠 Arquitetura e Tecnologias
 
-A aplicação adota uma separação de responsabilidades (Separation of Concerns) rigorosa, garantindo a manutenção e previsibilidade do código.
+A aplicação adota uma separação de responsabilidades rigorosa, garantindo a manutenção e previsibilidade do código.
 
 * **Biblioteca Core:** React 19
 * **Linguagem:** TypeScript
 * **Roteamento:** React Router DOM
-* **Estilização:** Tailwind CSS (Utility-first)
+* **Estilização:** Tailwind CSS 
 * **Client HTTP:** Axios
-* **Bundler:** Vite (Rolldown)
+* **Bundler:** Vite 
 * **Hospedagem:** Edge Network da Vercel
 
 ### Destaques de Código
