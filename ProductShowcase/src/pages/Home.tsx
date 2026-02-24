@@ -10,6 +10,9 @@ export function Home() {
   const [pokemonList, setPokemonList] = useState<PokemonListItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  // Estado para armazenar o termo de busca
+  const [searchTerm, setSearchTerm] = useState<string>('');
+
   // useEffect para buscar os dados dos Pokémon quando o componente é montado
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -25,6 +28,11 @@ export function Home() {
     fetchPokemon();
   }, []); 
 
+  // Filtra a lista de Pokémon com base no termo de busca, com ignorecase para facilitar a busca
+  const filteredPokemon = pokemonList.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   // Renderiza a interface do usuário, mostrando um loading enquanto os dados são buscados e depois exibindo os cartões de Pokémon
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -33,6 +41,17 @@ export function Home() {
         <p className="text-lg text-gray-700 mt-2">
           Explore o mundo dos Pokémon! Clique em um cartão para ver detalhes sobre cada criatura.
         </p>
+
+        {/* Campo para filtrar pokémon por nome */}
+        <div className="max-w-md mx-auto mb-8">
+          <input
+            type="text"
+            placeholder="Buscar Pokémon por nome..."
+            className="w-full p-4 rounded-xl border-2 border-gray-200 shadow-sm focus:border-red-500 focus:outline-none transition-colors text-lg"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       </header>
 
       {isLoading ? (
@@ -40,7 +59,7 @@ export function Home() {
       ) : (
         <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {/* Itera sobre a lista de Pokémon e renderiza um cartão para cada um usando o componente PokemonCard */} 
-          {pokemonList.map((pokemon) => (
+          {filteredPokemon.map((pokemon) => (
             <PokemonCard 
               key={pokemon.name} 
               name={pokemon.name} 
@@ -48,6 +67,10 @@ export function Home() {
             />
           ))}
         </main>
+      )}
+      {/* Imprime uma mensagem caso nenhum Pokémon seja encontrado com o termo de busca */}
+      {!isLoading && filteredPokemon.length === 0 && (
+        <p className="text-center text-gray-500 mt-10 text-xl">Nenhum Pokémon encontrado com esse nome.</p>
       )}
     </div>
   );
